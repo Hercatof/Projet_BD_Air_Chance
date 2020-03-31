@@ -73,8 +73,10 @@ Return True;
 
 END;
 
+
 --Requete 4: 
 
+ --Si le vol est passé et bien effectué la fonction renvoie vraie sinon elle renvoie faux.
 CREATE OR REPLACE FUNCTION TerminaisonVol(NumeroVol in integer, Termine in boolean)
                     RETURN boolean
                     IS
@@ -87,6 +89,7 @@ END;
 
 --Requête 5:
 
+--On ajoute un pilote ou une hôtesse.														      --
 CREATE OR REPLACE FUNCTION AjoutPilote(NumeroVol in integer, NumeroPersonnel in integer)
                     RETURN integer
                     IS
@@ -110,6 +113,8 @@ RETURN 1;
 END;
 
 --Requête 6:
+														      
+--On récupère les informations du client et on les groupe par client.														      --
 CREATE OR REPLACE FUNCTION InfoClient(NumeroClient in integer)
                     RETURN integer
                     IS

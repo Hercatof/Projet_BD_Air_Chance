@@ -27,6 +27,9 @@ CREATE OR REPLACE FUNCTION TransfertPassagers (NumeroVol in integer, Possible in
 
 BEGIN
 
+--Je récupère dans un premier temps le nombre de places des avions futures remplissant les conditions.
+--Je soustrait ensuite à ce résultat le nombre de place déjà prises et le nombre de passager à transférer du précédent avion.
+--Si le résultat est supérieur à 0 on peut placer tous les passagers sinon non.
 if (
 Select (count(nbEco) from model natural join Avion natural join Vol 
 where origine=

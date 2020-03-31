@@ -1,4 +1,4 @@
-FROP TABLE ParleLangue;
+DROP TABLE ParleLangue;
 DROP TABLE Hotesse;
 DROP TABLE Langue;
 DROP TABLE Pilote;

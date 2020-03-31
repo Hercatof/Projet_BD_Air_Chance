@@ -1,6 +1,8 @@
+DROP TABLE MembreHotesse;
 DROP TABLE ParleLangue;
 DROP TABLE Hotesse;
 DROP TABLE Langue;
+DROP TABLE MembrePilote;
 DROP TABLE Pilote;
 DROP TABLE Reservation;
 DROP TABLE Client;

@@ -93,6 +93,14 @@ CREATE TABLE Pilote (
   CONSTRAINT cPrimaryPilote PRIMARY KEY (numPilote)
 );
 
+CREATE TABLE MembrePilote (
+  numPilote NUMBER(11,0),
+  numVol NUMBER(10,0),
+  CONSTRAINT cPrimaryMembrePilote PRIMARY KEY (numPilote, numVol),
+  CONSTRAINT cForeign2MembrePilote FOREIGN KEY (numPilote) REFERENCES Pilote(numPilote),
+  CONSTRAINT cForeign1MembrePilote FOREIGN KEY (numVol) REFERENCES Vol(numVol)
+);
+
 CREATE TABLE Langue (
   libLangue VARCHAR2(100),
   CONSTRAINT cPrimaryLangue PRIMARY KEY (libLangue)
@@ -116,7 +124,15 @@ CREATE TABLE ParleLangue (
   libLangue VARCHAR2(100),
   CONSTRAINT cPrimaryParleLangue PRIMARY KEY (numHotesse, libLangue),
   CONSTRAINT cForeign1ParleLangue FOREIGN KEY (libLangue) REFERENCES Langue(libLangue),
-  CONSTRAINT cForeign2ParleLangue FOREIGN KEY (numHotesse) rEFERENCES Hotesse(numHotesse)
+  CONSTRAINT cForeign2ParleLangue FOREIGN KEY (numHotesse) REFERENCES Hotesse(numHotesse)
+);
+
+CREATE TABLE MembreHotesse (
+  numHotesse NUMBER(11,0),
+  numVol NUMBER(10,0),
+  CONSTRAINT cPrimaryMembreHotesse PRIMARY KEY (numHotesse, numVol),
+  CONSTRAINT cForeign2MembreHotesse FOREIGN KEY (numHotesse) REFERENCES Hotesse(numHotesse),
+  CONSTRAINT cForeign1MembreHotesse FOREIGN KEY (numVol) REFERENCES Vol(numVol)
 );
 
 --CONSTRAINTS

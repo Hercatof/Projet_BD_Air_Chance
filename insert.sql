@@ -1,95 +1,90 @@
---Requête 1:
+--Modele
+INSERT INTO Modele VALUES ('Coursier Ailé', 1, 10000);
+INSERT INTO Modele VALUES ('Smaug', 2, 5000);
+INSERT INTO Modele VALUES ('Aigle Géant', 1, 1000);
+INSERT INTO Modele VALUES ('Pégase', 1, 10000);
+INSERT INTO Modele VALUES ('Chimère', 2, 3000);
 
-Insert Into ModelAvion values ('CoursierAilé', 1, 3000);
-Insert Into Model Avion values ('Smaug', 3, 10 000); 
-Insert into Avion values (1, 'CoursierAilé', 20, 14, 4, 2);
-Insert into Avion values (2, 'Smaug', 50, 35, 10, 5);
-Insert into Vol values(1, 1, 'Grenoble', 'Paris', TO_DATE('2015/10/12', 'yyyy/mm/dd'), '12:30:00',  TO_DATE('2020/10/12', 'yyyy/mm/dd'), '14:00:00', 550, FALSE);
-Insert into Vol values(
-Insert into Pilote values(1,'Lafondu','Robert',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 260,);
-Insert into Pilote values(2,'Sainte','Galadrielle',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 200);
-Insert into Pilote values(3,'Malou','Eddy',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 100);
-Insert into Pilote values(4,'Célère','Jack',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 260);
-Insert into Pilote values(5,'Lenouveaunoir','Saruman',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 260);
-Insert into Pilote values(6,'Legrisclair','Gandalf',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 1200);
-Insert into Pilote values(7,'Monprécieux','Gollum',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 300);
-Insert into Pilote values(8,'Sacquet','Bilbon',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 120);
-Insert into Hôtesse values(1,'Sacquet','Elendil',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 120);
-Insert into Hôtesse values(2,'Javel','Aude',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 120);
+--Avion
+INSERT INTO Avion VALUES (1, 'Coursier Ailé', 40, 22, 10, 8);
+INSERT INTO Avion VALUES (2, 'Coursier Ailé', 40, 30, 6, 4);
+INSERT INTO Avion VALUES (3, 'Smaug', 100, 50, 30, 20);
+INSERT INTO Avion VALUES (4, 'Smaug', 100, 70, 20, 10);
+INSERT INTO Avion VALUES (5, 'Aigle Géant', 30, 16, 8, 6);
+INSERT INTO Avion VALUES (6, 'Aigle Géant', 30, 20, 6, 4);
+INSERT INTO Avion VALUES (7, 'Pégase', 10, 5, 3, 2);
+INSERT INTO Avion VALUES (8, 'pégase', 10, 7, 2, 1);
+INSERT INTO Avion VALUES (9, 'Chimère', 50, 30, 10, 10);
+INSERT INTO Avion VALUES (10, 'Chimère', 50, 35, 10, 5);
 
-Insert into Parle values(1,'Anglais');
-Insert into Parle values(1,'Espagnol');
-Insert into Parle values(1,'Allemand');
-Insert into Parle values(1,'Italien');
-Insert into Parle values(1,'Sindarin');
-Insert into Parle values(1,'Quenia');
+--Vol
+INSERT INTO Vol VALUES (1, 1, 'Grenoble', 'Paris', TO_DATE('2015/10/12', 'yyyy/mm/dd'), '12:30:00',  TO_DATE('2020/10/12', 'yyyy/mm/dd'), '14:00:00', 550, FALSE);
+INSERT INTO Vol VALUES (2, 2, 'Grenoble', 'Chambéry', TO_DATE('2016/08/09', 'yyyy/mm/dd'), '10:30:00',  TO_DATE('2020/08/09', 'yyyy/mm/dd'), '18:00:00', 2500, FALSE, 2);
+INSERT INTO Vol VALUES (3, 3, 'Grenoble', 'Annecy', TO_DATE('2015/10/12', 'yyyy/mm/dd'), '12:30:00',  TO_DATE('2015/10/12', 'yyyy/mm/dd'), '14:00:00', 550, FALSE, 2);
+INSERT INTO Vol VALUES (4, 4, 'Grenoble', 'Lyon', , , , , , , );
+INSERT INTO Vol VALUES (5, 5, 'Grenoble', 'Marseille', , , , , , , );
+INSERT INTO Vol VALUES (6, 6, 'Grenoble', 'Toulouse', , , , , , , );
+INSERT INTO Vol VALUES (7, 7, 'Grenoble', 'Nice', , , , , , , );
+INSERT INTO Vol VALUES (8, 8, 'Grenoble', 'Nantes', , , , , , , );
+INSERT INTO Vol VALUES (9, 9, 'Grenoble', 'Ajaccio', , , , , , , );
+INSERT INTO Vol VALUES (10, 10, 'Grenoble', 'Strasbourg', , , , , , , );
+INSERT INTO Vol VALUES (11, 1, 'Paris', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (12, 2, 'Chambéry', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (13, 3, 'Annecy', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (14, 4, 'Lyon', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (15, 5, 'Marseille', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (16, 6, 'Toulouse', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (17, 7, 'Nice', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (18, 8, 'Nantes', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (19, 9, 'Ajaccio', 'Grenoble', , , , , , , );
+INSERT INTO Vol VALUES (20, 10, 'Strasbourg', 'Grenoble', , , , , , , );
 
-Insert into Parle values(2,'Anglais');
-Insert into Parle values(2,'Allemand');
-Insert into Parle values(2,'Mandarin');
+--Place
+INSERT INTO Place VALUES ();
 
-Insert into MembrePilote values(1, 1);
-Insert into MembrePilote values(2, 1);
-Insert into MembreHôtesse values(1, 1);
-Insert into MembreHôtesse values(2, 1);
- 
-Insert into Vol values(2, 2, 'Pekin', 'Taïwan', TO_DATE('2016/08/09', 'yyyy/mm/dd'), '10:30:00',  TO_DATE('2020/08/09', 'yyyy/mm/dd'), '18:00:00', 2500, FALSE, 2);
-Insert into Vol values(1, 1, 'Grenoble', 'Paris', TO_DATE('2015/10/12', 'yyyy/mm/dd'), '12:30:00',  TO_DATE('2015/10/12', 'yyyy/mm/dd'), '14:00:00', 550, FALSE, 2);
-
---Requête 2:
-UPDATE Vol
-SET 		
-    numAvion = 2,
-	hDepart = '12:30:00',  
-	dateArrivee = TO_DATE('2020/10/12', 'yyyy/mm/dd'), 
-	hArrivee = '14:00:00',
-WHERE numVol=1;
-
-
-Insert into MembrePilote values(1, 2);
-Insert into MembreHôtesse values(2, 1);
-Delete from MembrePilote where numVol=1 and numPilote=1;
-Delete from MembreHôtesse where numVol=1 and numHôtesse=1;
-
-Delete from Vol where numVol=1;
-
---Requête 3: 
-Select numPlace, numVol, classe as lesplaces from Place natural join PlaceVol natural join Vol 
-where numVol=1;
-
-Select count(nbEco) from model natural join Avion natural join Vol 
-where origine=
-(select origine from Vol where numVol=1)
-and
-destination=
-(select destination from Vol where numVol=1)
-and
-(hDepart - (select hDepart from Vol where numVol=1)>0 or dateDepart - (select dateDepart from Vol where numVol=1)));
-
-Select count(nbPremière) from model natural join Avion natural join Vol
-where origine=
-(select origine from Vol where numVol=1)
-and
-destination=
-(select destination from Vol where numVol=1)
-and
-(hDepart - (select hDepart from Vol where numVol=1)>0 or dateDepart - (select dateDepart from Vol where numVol=1)));
-
-Select count(nbAffaire) from model natural join Avion natural join Vol
-where origine=
-(select origine from Vol where numVol=1)
-and
-destination=
-(select destination from Vol where numVol=1)
-and
-(hDepart - (select hDepart from Vol where numVol=1)>0 or dateDepart - (select dateDepart from Vol where numVol=1)));
+--PlaceVol
 
 
-
---minus 
---(Select numVol from Vol)
+--Client
 
 
---Requête 6:
-Select numPlace, numVol, classe from Place natural join PlaceVol natural join Vol
-  where (select nom from 
+--Reservation
+
+
+--Pilote
+INSERT INTO Pilote VALUES (1,'Lafondu','Robert',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 260,);
+INSERT INTO Pilote VALUES (2,'Sainte','Galadrielle',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 200);
+INSERT INTO Pilote VALUES (3,'Malou','Eddy',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 100);
+INSERT INTO Pilote VALUES (4,'Célère','Jack',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 260);
+INSERT INTO Pilote VALUES (5,'Lenouveaunoir','Saruman',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 260);
+INSERT INTO Pilote VALUES (6,'Legrisclair','Gandalf',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 1200);
+INSERT INTO Pilote VALUES (7,'Monprécieux','Gollum',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 300);
+INSERT INTO Pilote VALUES (8,'Sacquet','Bilbon',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 120);
+
+--MembrePilote
+INSERT INTO MembrePilote VALUES (1, 2);
+
+--Langue
+INSERT INTO Parle VALUES (1,'Espagnol');
+INSERT INTO Parle VALUES (1,'Allemand');
+INSERT INTO Parle VALUES (1,'Italien');
+INSERT INTO Parle VALUES (1,'Sindarin');
+INSERT INTO Parle VALUES (1,'Quenia');
+INSERT INTO Parle VALUES (2,'Anglais');
+INSERT INTO Parle VALUES (2,'Allemand');
+INSERT INTO Parle VALUES (2,'Mandarin');
+
+
+--Hotesse
+INSERT INTO MembreHotesse VALUES (1, 1);
+INSERT INTO MembreHotesse VALUES (2, 1);
+INSERT INTO Hotesse VALUES (1,'Sacquet','Elendil',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 120);
+INSERT INTO Hotesse VALUES (2,'Javel','Aude',45,'Avenue de la Charrondière', 74800, 'La Roche sur Foron', 'France', 120);
+
+--ParleLangue
+INSERT INTO ParleLangue VALUES (1,'Anglais');
+
+--MenbreHotesse
+INSERT INTO MembrePilote VALUES (1, 1);
+INSERT INTO MembrePilote VALUES (2, 1);
+INSERT INTO MembreHotesse VALUES (2, 1);

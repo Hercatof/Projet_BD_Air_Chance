@@ -40,6 +40,7 @@ CREATE TABLE Place (
   position POSITION,
   CONSTRAINT cp PRIMARY KEY (numPlace),
   CONSTRAINT cf FOREIGN KEY (numAvion) REFERENCES Avion(numAvion)
+  CONSTRAINT cPosition CHECK (position IN ('HUBLOT', 'COULOIR', 'CENTRE')
 );
 
 CREATE TABLE PlaceVol (
@@ -117,6 +118,5 @@ CREATE TABLE ParleLangue (
 
 --CONSTRAINTS
 --contraintes sur le nombre mini de places par avion pour chaque classe
-POSITION = {HUBLOT, COULOIR, CENTRE};
 --avion.capacité >= vol.capacité
 --avion.rayon d''action >= vol.distance

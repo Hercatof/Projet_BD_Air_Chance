@@ -9,11 +9,12 @@ CREATE TABLE Avion (
   numAvion NUMBER(7,0),
   nomModele VARCHAR2(100) NOT NULL,
   capacite(5,0) NUMBER,
-  nbEco NUMBER(4,0),
+  nbEconomique NUMBER(4,0),
   nbPremiere NUMBER(4,0),
   nbAffaire NUMBER(4,0),
   CONSTRAINT cp PRIMARY KEY (numAvion),
-  CONSTRAINT cf FOREIGN KEY (nomModele) REFERENCES Modele(nomModele)
+  CONSTRAINT cf FOREIGN KEY (nomModele) REFERENCES Modele(nomModele),
+  CONSTRAINT cCapacite CHECK (capacite = (nbEconomique + nbPremiere + nbAffaire))
 );
 
 CREATE TABLE Vol (
@@ -37,9 +38,10 @@ CREATE TABLE Place (
   numPlace NUMBER(5,0),
   numAvion NUMBER(7,0) NOT NULL,
   classe VARCHAR2(100),
-  position POSITION,
+  position VARCHAR(7),
   CONSTRAINT cp PRIMARY KEY (numPlace),
-  CONSTRAINT cf FOREIGN KEY (numAvion) REFERENCES Avion(numAvion)
+  CONSTRAINT cf FOREIGN KEY (numAvion) REFERENCES Avion(numAvion),
+  CONSTRAINT cClasse CHECK (classe IN ('ECONOMIQUE', 'PREMIERE', 'AFFAIRE'),
   CONSTRAINT cPosition CHECK (position IN ('HUBLOT', 'COULOIR', 'CENTRE')
 );
 
@@ -91,7 +93,7 @@ CREATE TABLE Pilote (
 );
 
 CREATE TABLE Langue (
-  libLangue VARCHAR20(100),
+  libLangue VARCHAR2(100),
   CONSTRAINT cp PRIMARY KEY (libLangue)
 );
 
@@ -110,7 +112,7 @@ CREATE TABLE Hotesse (
 
 CREATE TABLE ParleLangue (
   numHotesse NUMBER,
-  libLangue VARCHAR20(100),
+  libLangue VARCHAR2(100),
   CONSTRAINT cp PRIMARY KEY (numHotesse, libLangue),
   CONSTRAINT cf1 FOREIGN KEY (libLangue) REFERENCES Langue(libLangue),
   CONSTRAINT cf2 FOREIGN KEY (numHotesse) rEFERENCES Hotesse(numHotesse)

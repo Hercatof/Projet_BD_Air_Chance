@@ -107,11 +107,56 @@ Return True;
 
 END;
 
+--Requete 4: 
+
+CREATE OR REPLACE FUNCTION TerminaisonVol(NumeroVol in integer, Termine in boolean)
+                    RETURN boolean
+                    IS
+
+BEGIN
+if (select to_char(sysdate,'yyyymmdd hh24:mi:ss') from Dual < concat((select jourAr from Vol where numVol=NumeroVol),(select heureAr from Vol where numVol=NumeroVol))
+then Return True;
+ELSE Return False;
+END;
+
+--Requête 5:
+
+CREATE OR REPLACE FUNCTION AjoutPilote(NumeroVol in integer, NumeroPersonnel in integer)
+                    RETURN integer
+                    IS
+
+BEGIN
+UPDATE MembrePilote
+SET    numPilote=NumeroPersonnel
+WHERE  numVol=NumeroVol;
+RETURN 1;
+END;
+
+CREATE OR REPLACE FUNCTION AjoutHôtesse(NumeroVol in integer, NumeroPersonnel in integer)
+                    RETURN integer
+                    IS
+
+BEGIN
+UPDATE MembreHôtesse
+SET    numHôtesse=NumeroPersonnel
+WHERE  numVol=NumeroVol;
+RETURN 1;
+END;
 
 --minus 
 --(Select numVol from Vol)
 
 
 --Requête 6:
-Select numPlace, numVol, classe from Place natural join PlaceVol natural join Vol
-  where (select nom from 
+CREATE OR REPLACE FUNCTION InfoClient(NumeroClient in integer)
+                    RETURN integer
+                    IS
+					
+Select numReservation, dateReservation, numClient, numPlace, numVol, dateDepart, heureDep, dateAr, heureAr, classe, Position, prix 
+from Place natural join Vol natural join PlaceVol natural join Reservation natural join Client
+where numClient=NumeroClient
+order by numClient;
+
+RETURN 1;
+
+--

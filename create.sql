@@ -1,5 +1,5 @@
 CREATE TABLE Modele (
-    nomModele VARCHAR2(3),
+    nomModele VARCHAR2(100),
     nbPilotesMin NUMBER(3,0),
     rayonMax NUMBER(7,0),
     CONSTRAINT cPrimaryModele PRIMARY KEY (nomModele)

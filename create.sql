@@ -27,10 +27,11 @@ CREATE TABLE Vol (
   heureAr DATE,
   jourAr DATE,
   distance NUMBER(6,0),
-  volTermine BOOLEAN,
+  volTermine NUMBER(1,0),
   nbPilotesMin NUMBER(3,0),
   CONSTRAINT cPrimaryVol PRIMARY KEY (numVol),
-  CONSTRAINT cForeignVol FOREIGN KEY (numAvion) REFERENCES Avion(numAvion)
+  CONSTRAINT cForeignVol FOREIGN KEY (numAvion) REFERENCES Avion(numAvion),
+  CONSTRAINT cVolTermine CHECK (volTermine IN (0, 1))
 );
 --pour Modele.nomModele = Avion.nomModele et Avion.nomAvion = Vol.nomAvion Modele.nbPilotesMin <= Vol.nbPilotesMin
 

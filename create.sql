@@ -24,7 +24,7 @@ CREATE TABLE Vol (
   destination VARCHAR2(100),
   heureDep DATE,
   jourDep DATE,
-  heureAr TIME,
+  heureAr DATE,
   jourAr DATE,
   distance NUMBER(6,0),
   volTermine BOOLEAN,
@@ -41,7 +41,7 @@ CREATE TABLE Place (
   position VARCHAR(7),
   CONSTRAINT cPrimaryPlace PRIMARY KEY (numPlace),
   CONSTRAINT cForeignPlace FOREIGN KEY (numAvion) REFERENCES Avion(numAvion),
-  CONSTRAINT cClasse CHECK (classe IN ('ECONOMIQUE', 'PREMIERE', 'AFFAIRE'),
+  CONSTRAINT cClasse CHECK (classe IN ('ECONOMIQUE', 'PREMIERE', 'AFFAIRE')),
   CONSTRAINT cPosition CHECK (position IN ('HUBLOT', 'COULOIR', 'CENTRE'))
 );
 
